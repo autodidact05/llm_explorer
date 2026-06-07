@@ -1,0 +1,21 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+
+RUN pip install --no-cache-dir uv
+
+COPY pyproject.toml README.md ./
+COPY src/backend ./src/backend
+
+RUN uv sync --no-dev
+
+ENV PYTHONPATH=/app/src
+ENV API_HOST=0.0.0.0
+ENV API_PORT=8000
+ENV API_RELOAD=0
+
+EXPOSE 8000
+
+VOLUME ["/app/data"]
+
+CMD ["uv", "run", "llm-explorer-api"]
