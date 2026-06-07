@@ -6,6 +6,9 @@ Routes all model calls through the OpenRouter API, records every token exchange,
 
 ---
 
+## Review Requested
+Please review architecture, code quality, and documentation.
+
 ## Features
 
 ### Chat
@@ -296,17 +299,6 @@ npx tsc --noEmit
 | `audit_service.py` | `usage_audit` + `expense_log` + JSONL |
 | `credit_service.py` | Wallet ledger (`balance` table) |
 | `init_db.py` | Schema creation and idempotent migrations |
-
-### Documentation
-
-| Doc | Description |
-|-----|-------------|
-| [docs/architecture.md](docs/architecture.md) | System layers, schema, API surface |
-| [docs/control_data_flow.md](docs/control_data_flow.md) | Control & data flow diagrams |
-| [docs/prd.md](docs/prd.md) | Product requirements (as built) |
-| [docs/user-guide.md](docs/user-guide.md) | End-user product guide (also in app Settings → Guide) |
-| [docs/suggestion.md](docs/suggestion.md) | Market & UX improvement ideas |
-| [docs/code_review.md](docs/code_review.md) | Engineering review & backlog |
 
 ---
 
